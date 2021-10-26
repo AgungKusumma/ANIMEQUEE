@@ -1,3 +1,47 @@
 <resources>
-    <string name="app_name">DragonMasterShop</string>
+    <string name="app_name">Wisata Nusantara</string>
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">Information</string>
+    <string name="sports_info_placeholder">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type
+        specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the
+        1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.
+    </string>
+
+    <string-array name="sports_titles">
+        <item>Palembang</item>
+        <item>Padang</item>
+        <item>Lampung</item>
+        <item>Yogyakarta</item>
+        <item>Balikpapan</item>
+    </string-array>
+
+    <string-array name="sport_info_detail">
+        <item>Berikut ini adalah salah satu kota yang mempunyai banyak wisata. Salah satunya Jembatan Ampera. Jembatan Ampera terbentang diatas Sungai Kota Musi Palembang yang memiliki panjang 1.177 meter, lebar 22 meter dan tinggi 63 meter. Sedangkan jarak antara menara yaitu 75 meter.</item>
+        <item>Berikut ini adalah salah satu kota yang terkenal dengan Jam Gadang. Banyak sekali wisata yang ada di Kota Padang, namun kebanyakan wisatawan akan mengunjungi menara sebagai icon yang menjadi penanda di kota Bukittinggi, Padang.</item>
+        <item>Berikut ini adalah salah satu kota yang memiliki banyak pantai setiap daerahnya. Banyak wisatawan yang berpergian ke lampung untuk mengunjungi pantai sebagai tempat hiburan, antaranya Tegal Mas, Pahawang, Tangkil dan banyak lagi.</item>
+        <item>Berikut ini adalah salah satu kota yang memiliki banyak pantai setiap daerahnya. Banyak wisatawan yang berpergian ke lampung untuk mengunjungi pantai sebagai tempat hiburan, antaranya Tegal Mas, Pahawang, Tangkil dan banyak lagi.</item>
+        <item>Berikut ini adalah salah satu kota yang memiliki banyak pantai setiap daerahnya. Banyak wisatawan yang berpergian ke lampung untuk mengunjungi pantai sebagai tempat hiburan, antaranya Tegal Mas, Pahawang, Tangkil dan banyak lagi.</item>
+    </string-array>
+
+    <string-array name="sports_info">
+        <item>Berikut ini adalah salah satu wisata dari kota Palembang</item>
+        <item>Berikut ini adalah salah satu wisata dari kota Padang</item>
+        <item>Berikut ini adalah salah satu wisata dari kota Lampung</item>
+        <item>Berikut ini adalah salah satu wisata dari kota Yogyakarta</item>
+        <item>Berikut ini adalah salah satu wisata dari kota Balikpapan</item>
+    </string-array>
+
+    <array name="sports_images">
+        <item>@drawable/gambar</item>
+        <item>@drawable/gambar1</item>
+        <item>@drawable/gambar2</item>
+        <item>@drawable/gambar3</item>
+        <item>@drawable/gambar4</item>
+    </array>
 </resources>
