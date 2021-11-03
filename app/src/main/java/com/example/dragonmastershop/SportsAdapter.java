@@ -17,6 +17,7 @@
 package com.example.dragonmastershop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -105,11 +106,11 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
         public void onClick(View view) {
             Sport currentSport = mSportsData.get(getAdapterPosition());
 
-//            Intent detailIntent = new Intent(mContext, DetailActivity.class);
-//            detailIntent.putExtra("title", currentSport.getTitle());
-//            detailIntent.putExtra("image_resource",
-//                    currentSport.getImageResource());
-//            mContext.startActivity(detailIntent);
+            Intent detailIntent = new Intent(mContext, DetailActivity.class);
+            detailIntent.putExtra("title", currentSport.getTitle());
+            detailIntent.putExtra("image_resource",
+                    currentSport.getImageResource());
+            mContext.startActivity(detailIntent);
 
         }
 
