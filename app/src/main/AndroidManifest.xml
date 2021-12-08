@@ -20,6 +20,9 @@
             android:name=".MainActivity"
             android:exported="true"/>
         <activity
+            android:name=".search.SearchActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailWisata"
             android:exported="true" />
         <activity

@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Wisata Nusantara</string>
+    <string name="app_name">Anime Popular</string>
+    <string name="anime_name">Anime Name</string>
+    <string name="search_anime">Search Anime</string>
+    <string name="loading">Loading...</string>
+    <string name="no_search_term">Please enter a search term</string>
+    <string name="no_network">Please check your network connection and try again.</string>
+    <string name="no_results">"No Results Found"</string>
+    <string name="input_hint">Anime Title</string>
+    <string name="button_search">Search</string>
 </resources>
