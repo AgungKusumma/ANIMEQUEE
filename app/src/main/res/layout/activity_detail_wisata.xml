@@ -84,7 +84,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:background="@drawable/ic_launcher_background"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_dtl_wisata"
+                                android:src="@drawable/ic_pen"
                                 android:tint="@color/white" />
 
                             <TextView
@@ -106,6 +106,35 @@
                             android:layout_margin="10dp">
 
                             <ImageView
+                                android:id="@+id/ivageRating"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:background="@drawable/ic_launcher_background"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_rate"
+                                android:tint="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tvageRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@+id/ivageRating"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toRightOf="@+id/ivageRating" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <ImageView
                                 android:id="@+id/ivDescWisata"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
@@ -113,7 +142,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:background="@drawable/ic_launcher_background"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_dtl_desc"
+                                android:src="@drawable/ic_book"
                                 android:tint="@color/white" />
 
                             <TextView

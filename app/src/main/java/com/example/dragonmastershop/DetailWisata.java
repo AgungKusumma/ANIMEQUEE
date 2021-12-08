@@ -23,9 +23,9 @@ import org.json.JSONObject;
 public class DetailWisata extends AppCompatActivity {
 
     Toolbar tbDetailWisata;
-    TextView tvNamaWisata, tvDescWisata;
+    TextView tvNamaWisata, tvDescWisata, tvageRating;
     ImageView imgWisata;
-    String idWisata, NamaWisata, Desc;
+    String idWisata, NamaWisata, Desc, ageRating;
     ModelWisata modelWisata;
 
     @Override
@@ -48,6 +48,7 @@ public class DetailWisata extends AppCompatActivity {
             //set id
             imgWisata = findViewById(R.id.imgWisata);
             tvNamaWisata = findViewById(R.id.tvNamaWisata);
+            tvageRating = findViewById(R.id.tvageRating);
             tvDescWisata = findViewById(R.id.tvDescWisata);
 
             //get img
@@ -75,10 +76,12 @@ public class DetailWisata extends AppCompatActivity {
                             JSONObject title = attr.getJSONObject("titles");
 
                             NamaWisata = title.getString("en_jp");
+                            ageRating = attr.getString("ageRatingGuide");
                             Desc = attr.getString("synopsis");
 
                             //set Text
                             tvNamaWisata.setText(NamaWisata);
+                            tvageRating.setText(ageRating);
                             tvDescWisata.setText(Desc);
                         } catch (JSONException e) {
                             e.printStackTrace();
