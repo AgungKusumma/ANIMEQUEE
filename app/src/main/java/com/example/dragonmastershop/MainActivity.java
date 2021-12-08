@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements WisataAdapter.onS
         setContentView(R.layout.activity_main);
 
         tbWisata = findViewById(R.id.toolbar_wisata);
-        tbWisata.setTitle("Daftar Wisata Purwakarta");
+        tbWisata.setTitle("Daftar Anime Populer");
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Mohon tunggu");
@@ -63,14 +63,17 @@ public class MainActivity extends AppCompatActivity implements WisataAdapter.onS
                     public void onResponse(JSONObject response){
                         try{
                             progressDialog.dismiss();
-                            JSONArray playerArray = response.getJSONArray("wisata");
+                            JSONArray playerArray = response.getJSONArray("data");
                             for (int i = 0; i < playerArray.length(); i++){
                                 JSONObject temp = playerArray.getJSONObject(i);
+                                JSONObject attr = temp.getJSONObject("attributes");
+                                JSONObject img = attr.getJSONObject("posterImage");
+
                                 ModelWisata dataApi = new ModelWisata();
                                 dataApi.setIdWisata(temp.getString("id"));
-                                dataApi.setTxtNamaWisata(temp.getString("nama"));
-                                dataApi.setGambarWisata(temp.getString("gambar_url"));
-                                dataApi.setKategoriWisata(temp.getString("kategori"));
+                                dataApi.setTxtNamaWisata(attr.getString("canonicalTitle"));
+                                dataApi.setGambarWisata(img.getString("original"));
+                                dataApi.setKategoriWisata(attr.getString("averageRating"));
                                 modelWisata.add(dataApi);
                                 showWisata();
                             }
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements WisataAdapter.onS
 
     @Override
     public void onSelected(ModelWisata modelWisata){
-        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        Intent intent = new Intent(MainActivity.this, DetailWisata.class);
         intent.putExtra("detailWisata", modelWisata);
         startActivity(intent);
     }

@@ -20,7 +20,7 @@ import com.example.dragonmastershop.model.ModelWisata;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailWisata extends AppCompatActivity {
 
     Toolbar tbDetailWisata;
     TextView tvNamaWisata, tvDescWisata;
@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_wisata);
 
         tbDetailWisata = findViewById(R.id.tbDetailWisata);
         tbDetailWisata.setTitle("Detail Wisata");
@@ -69,25 +69,27 @@ public class DetailActivity extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener(){
                     @Override
                     public void onResponse(JSONObject response){
-                        for (int i = 0; i < response.length(); i++){
-                            try{
-                                NamaWisata = response.getString("nama");
-                                Desc = response.getString("deskripsi");
+                        try {
+                            JSONObject okee = response.getJSONObject("data");
+                            JSONObject attr = okee.getJSONObject("attributes");
+                            JSONObject title = attr.getJSONObject("titles");
 
-                                //set Text
-                                tvNamaWisata.setText(NamaWisata);
-                                tvDescWisata.setText(Desc);
-                            } catch (JSONException e){
-                                e.printStackTrace();
-                                Toast.makeText(DetailActivity.this,
-                                        "Gagal menampilkan data !", Toast.LENGTH_SHORT).show();
-                            }
+                            NamaWisata = title.getString("en_jp");
+                            Desc = attr.getString("synopsis");
+
+                            //set Text
+                            tvNamaWisata.setText(NamaWisata);
+                            tvDescWisata.setText(Desc);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(DetailWisata.this,
+                                    "Gagal menampilkan data !", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onError(ANError anError){
-                        Toast.makeText(DetailActivity.this,
+                        Toast.makeText(DetailWisata.this,
                                 "Tidak ada jaringan internet!", Toast.LENGTH_SHORT).show();
                     }
                 });
