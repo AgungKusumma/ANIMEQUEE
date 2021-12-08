@@ -3,20 +3,25 @@ package com.example.dragonmastershop;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.dragonmastershop.DetailWisata;
+import com.example.dragonmastershop.R;
 import com.example.dragonmastershop.adapter.WisataAdapter;
 import com.example.dragonmastershop.api.Api;
 import com.example.dragonmastershop.model.ModelWisata;
+import com.example.dragonmastershop.search.SearchActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,11 +49,22 @@ public class MainActivity extends AppCompatActivity implements WisataAdapter.onS
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Mohon tunggu");
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Sedang menmapilkan data...");
+        progressDialog.setMessage("Sedang menampilkan data...");
 
         rvWisata = findViewById(R.id.rvWisata);
         rvWisata.setHasFixedSize(true);
         rvWisata.setLayoutManager(new LinearLayoutManager(this));
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =
+                        new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         getWisata();
     }
